@@ -1,9 +1,17 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { connect } from "react-redux";
+import { css } from "aphrodite/no-important";
 import { ROUTES } from "../constants";
-import { LandingPage, PageNotFound, TermsOfUse, PrivacyPolicy } from "../pages";
+import {
+  InvitationPage,
+  LandingPage,
+  SignupPage,
+  PageNotFound,
+  WelcomePage,
+} from "../pages";
 import LayoutWrapper from "./LayoutWrapper";
+import styles from "./styles";
 
 const NoAuthRoute = ({ ...props }) => {
   return (
@@ -23,7 +31,7 @@ class Routers extends React.PureComponent {
     };
     return (
       <Router>
-        <div>
+        <div className={css(styles.container)}>
           <Switch>
             <NoAuthRoute
               path={ROUTES.HOME}
@@ -32,13 +40,20 @@ class Routers extends React.PureComponent {
             />
 
             <NoAuthRoute
-              path={ROUTES.TERMS_OF_USE}
-              component={TermsOfUse}
+              path={ROUTES.INVITATION}
+              component={InvitationPage}
               {...repeatedProps}
             />
+
             <NoAuthRoute
-              path={ROUTES.PRIVACY_POLICY}
-              component={PrivacyPolicy}
+              path={ROUTES.SIGNUP}
+              component={SignupPage}
+              {...repeatedProps}
+            />
+
+            <NoAuthRoute
+              path={ROUTES.WELCOME}
+              component={WelcomePage}
               {...repeatedProps}
             />
 

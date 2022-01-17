@@ -37,7 +37,7 @@ export default class App extends React.Component {
     if (this.state.isLoading) {
       return (
         <div className="loader-wrapper">
-          <BarLoader sizeUnit={"px"} size={150} color={Colors.kgGreen} />
+          <BarLoader sizeUnit={"px"} size={150} color={Colors.brand.primary} />
         </div>
       );
     }
@@ -47,7 +47,11 @@ export default class App extends React.Component {
         <PersistGate
           loading={
             <div className="loader-wrapper">
-              <BarLoader sizeUnit={"px"} size={150} color={Colors.kgGreen} />
+              <BarLoader
+                sizeUnit={"px"}
+                size={150}
+                color={Colors.brand.primary}
+              />
             </div>
           }
           persistor={this.persistor}

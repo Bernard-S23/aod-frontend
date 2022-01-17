@@ -273,30 +273,10 @@ export const LOCATION_INPUT_FIELDS_NAME = {
 
 export const ROUTES = {
   HOME: "/",
-  RESET_PASSWORD: "/reset-password",
-  PRICING: "/pricing",
-  FREE_TRIAL: "/free-trial",
-  BESPOKE_LOGISTICS: "/products/bespoke-logistics",
-  BOOKING_CONFIRM: "/dashboard/booking-confirm",
-  BOOKING_THANK_YOU: "/dashboard/thank-you",
-  TERMS_OF_USE: "/terms-of-use",
-  PRIVACY_POLICY: "/privacy-policy",
-  DASHBOARD: "/dashboard",
-  BOOKINGS: "/dashboard/bookings",
-  NEW_BOOKING: "/dashboard/new-booking",
-  DRIVER: "/dashboard/driver",
-  BOOKING: "/dashboard/booking",
-  BOOKING_DETAIL: "/dashboard/booking-detail",
-  BOOKING_LIVE: "/dashboard/bookings/live",
+  INVITATION: "/invitation",
+  SIGNUP: "/signup",
+  WELCOME: "/welcome",
   PAGE_NOT_FOUND: "/PageNotFound",
-  LOGIN: "/dashboard/login",
-  SIGN_UP: "/dashboard/register",
-  PUBLIC_TRACKING: "/tracking",
-  DRIVER_LANDING_PAGE: "/driver",
-  SETTING: "/dashboard/setting",
-  DELIVERY_MANAGEMENT: "/dashboard/delivery-management",
-  MOBILE_APP_NAVIGATOR: "/app",
-  TRACKING: "/track",
 };
 export const TRACKING_TYPE_JOB = "j";
 export const TRACKING_TYPE_STOP = "s";

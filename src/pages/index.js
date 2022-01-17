@@ -1,7 +1,8 @@
 // @flow
 import LandingPage from "./LandingPage";
+import InvitationPage from "./InvitationPage";
+import SignupPage from "./SignupPage";
+import WelcomePage from "./WelcomePage";
 import PageNotFound from "./PageNotFound";
-import TermsOfUse from "./TermsOfUse";
-import PrivacyPolicy from "./PrivacyPolicy";
 
-export { LandingPage, PrivacyPolicy, PageNotFound, TermsOfUse };
+export { LandingPage, InvitationPage, SignupPage, WelcomePage, PageNotFound };
