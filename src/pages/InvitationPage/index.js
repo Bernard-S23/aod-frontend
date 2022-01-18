@@ -47,6 +47,10 @@ export default function InvitationPage(props) {
   ] = useLazyQuery(VALIDATE_INVITATION_CODE, {
     onCompleted({ doers }) {
       if (doers.data.length > 0) {
+        if (doers.data[0].attributes.SignupCompleted) {
+          alert.error("This token has been used already");
+          return;
+        }
         history.push({
           pathname: ROUTES.SIGNUP,
           state: { doer: doers.data[0] },

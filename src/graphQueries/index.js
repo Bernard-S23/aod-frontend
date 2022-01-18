@@ -15,27 +15,34 @@ export const VALIDATE_INVITATION_CODE = gql`
   query getInvitationCode($code: String!) {
     doers(filters: { InvitationCode: { eq: $code } }) {
       data {
+        id
         attributes {
           Email
+          SignupCompleted
         }
       }
     }
   }
 `;
 
-// $userOccationalEmail: Boolean
-// $userIntroductoryEmails: Boolean
 export const SIGNUP_REQUEST = gql`
-  mutation createDoer(
+  mutation updateDoer(
+    $userID: ID!
     $userFirstName: String
     $userLastName: String
     $userPhone: Long
+    $userOccationalEmail: Boolean
+    $userIntroductoryEmails: Boolean
   ) {
-    createDoer(
+    updateDoer(
+      id: $userID
       data: {
         FirstName: $userFirstName
         LastName: $userLastName
         Phone: $userPhone
+        ReceiveOccasionalEmail: $userOccationalEmail
+        ReceiveIntroductoryEmails: $userIntroductoryEmails
+        SignupCompleted: true
       }
     ) {
       data {

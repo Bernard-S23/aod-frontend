@@ -17,6 +17,7 @@ export default function SignupPage(props) {
   const [userEmail, setUserEmail] = useState(
     props?.location?.state?.doer?.attributes?.Email
   );
+  const [userID, setUserID] = useState(props?.location?.state?.doer?.id);
   // Form Values
   const [userFirstName, setUserFirstName] = useState("");
   const [userLastName, setUserLastName] = useState("");
@@ -34,11 +35,13 @@ export default function SignupPage(props) {
     useState("");
 
   useEffect(() => {
+    const userId = props?.location?.state?.doer?.id;
     const userEmail = props?.location?.state?.doer?.attributes?.Email;
     if (_.isNil(userEmail)) {
       history.replace(ROUTES.HOME);
       return;
     }
+    setUserID(userID);
     setUserEmail(userEmail);
   }, []);
 
@@ -47,7 +50,7 @@ export default function SignupPage(props) {
     { signupRequestData, signupRequestLoading, signupRequestError },
   ] = useMutation(SIGNUP_REQUEST, {
     onCompleted(data) {
-      alert.success("Thank-you for applying. We will review your request");
+      history.replace(ROUTES.WELCOME);
     },
     onError(error) {
       alert.error(error.message);
@@ -57,14 +60,14 @@ export default function SignupPage(props) {
   const formIsValid = () => {
     let isValid = true;
 
-    if (validator.isAlpha(userFirstName)) {
+    if (validator.isAlpha(userFirstName, "en-US", { ignore: " " })) {
       setUserFirstNameError("");
     } else {
       setUserFirstNameError("Please enter a valid name");
       isValid = false;
     }
 
-    if (validator.isAlpha(userLastName)) {
+    if (validator.isAlpha(userLastName, "en-US", { ignore: " " })) {
       setUserLastNameError("");
     } else {
       setUserLastNameError("Please enter a valid name");
@@ -94,6 +97,7 @@ export default function SignupPage(props) {
     if (formIsValid()) {
       signupRequest({
         variables: {
+          userID,
           userFirstName,
           userLastName,
           userPhone,
