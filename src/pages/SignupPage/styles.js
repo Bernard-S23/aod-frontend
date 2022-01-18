@@ -75,4 +75,8 @@ export default StyleSheet.create({
   formSubmitIcon: {
     marginLeft: 15,
   },
+  validationError: {
+    color: Colors.red,
+    fontSize: "0.75em",
+  },
 });

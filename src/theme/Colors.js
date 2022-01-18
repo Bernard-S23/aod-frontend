@@ -8,6 +8,7 @@ const grey2 = "#E1DCDC";
 const white = "#ffffff";
 const black1 = "#1A1A1A";
 const black1Tint = "rgba(26,26,26,0.2)";
+const red = "#ff0000";
 
 export default {
   brand,
@@ -16,4 +17,5 @@ export default {
   white,
   black1,
   black1Tint,
+  red,
 };

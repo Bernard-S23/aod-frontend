@@ -7,7 +7,8 @@ export const IMAGE_MAX_HEIGHT = 500;
 export const MILES_LIMIT = 50;
 
 // URLS
-export const URL_WEBSITE = "https://www.kiffgo.com";
+export const BASE_URL = "http://localhost:1337";
+export const GRAPHQL_URI = `${BASE_URL}/graphql`;
 
 // Array of week
 
